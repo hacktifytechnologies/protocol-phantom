@@ -1,4 +1,4 @@
-- name: 'HACKTIFY: Setup Protocol Phantom Bank Lab'
+- name: 'HACKTIFY: Setup protocol phantom Lab'
   id: 9b934293-afa7-ed93-ee6a-ca926a171426
   description: >-
     A banking portal is running on port 5000. The platform allows customers
@@ -19,16 +19,13 @@
     - name: sh
       platform: linux
       command: |
-        git clone https://github.com/hacktifytechnologies/protocol-phantom /opt/hacktify/protocol-phantom
-        cd /opt/hacktify/protocol-phantom
-        chmod +x setup.sh
-        bash setup.sh -a
+        git clone https://github.com/hacktifytechnologies/protocol-phantom /opt/hacktify/protocol-phantom && cd /opt/hacktify/protocol-phantom && docker compose up -d --build && echo 'Lab deployment complete'
       code: null
       language: null
       build_target: null
       payloads: []
       uploads: []
-      timeout: 300
+      timeout: 600
       parsers: []
       cleanup: []
       variations: []
