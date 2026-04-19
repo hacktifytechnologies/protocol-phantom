@@ -1,0 +1,36 @@
+- name: 'HACKTIFY: Setup Protocol Phantom Bank Lab'
+  id: 9b934293-afa7-ed93-ee6a-ca926a171426
+  description: >-
+    A banking portal is running on port 5000. The platform allows customers
+    to register, log in, and manage their accounts. The portal also has an
+    administrative section that handles customer verification and high-value
+    fund transfers. Register a standard customer account, explore the
+    application, and investigate how the backend determines your network
+    identity and role. Your objective is to escalate to administrative
+    access, bypass customer verification controls, and authorize a large
+    wire transfer.
+  tactic: defense-evasion
+  technique_id: T1036
+  technique_name: 'Masquerading'
+  singleton: true
+  repeatable: false
+  delete_payload: false
+  executors:
+    - name: sh
+      platform: linux
+      command: |
+        git clone https://github.com/hacktifytechnologies/protocol-phantom /opt/hacktify/protocol-phantom
+        cd /opt/hacktify/protocol-phantom
+        chmod +x setup.sh
+        bash setup.sh -a
+      code: null
+      language: null
+      build_target: null
+      payloads: []
+      uploads: []
+      timeout: 300
+      parsers: []
+      cleanup: []
+      variations: []
+      additional_info: {}
+  requirements: []
